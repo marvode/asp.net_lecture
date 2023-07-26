@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestWebApi.Abstractions;
 using TestWebApi.DataTransferObjects;
@@ -22,9 +24,34 @@ public class UserController : Controller
 
         var result = _userService.Register(user.Name, user.Email, user.Password);
 
-        if (result == null)
-            return Ok();
-        
-        return Ok(user);
+        return Ok(result);
+    }
+    
+    [HttpPost("user/login")]
+    public IActionResult Login([FromBody] LoginDto userCredentials)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState.SelectMany(x => x.Value.Errors.Select(xx => new { Code = x.Key, Message = xx.ErrorMessage })));
+
+        var result = _userService.Login(userCredentials.Email, userCredentials.Password);
+
+        return Ok(result);
+    }
+    
+    [Authorize]
+    [HttpPut("user/edit")]
+    public IActionResult Edit([FromBody] UserUpdateDto userEdit)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState.SelectMany(x => x.Value.Errors.Select(xx => new { Code = x.Key, Message = xx.ErrorMessage })));
+
+        var identity = HttpContext.User.Identity as ClaimsIdentity;
+        var claim = identity.FindFirst(ClaimTypes.NameIdentifier);
+        var userId = claim.Value;
+
+        var fullName = $"{userEdit.FirstName} {userEdit.LastName}";
+        var result = _userService.EditUserName(userId, fullName);
+
+        return Ok(result);
     }
 }

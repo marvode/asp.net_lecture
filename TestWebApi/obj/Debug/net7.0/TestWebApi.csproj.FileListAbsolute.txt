@@ -41,3 +41,10 @@
 /Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Mono.TextTemplating.dll
 /Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/System.CodeDom.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/marv/RiderProjects/TestWebApi/TestWebApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
