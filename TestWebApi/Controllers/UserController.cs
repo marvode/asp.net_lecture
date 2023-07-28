@@ -1,7 +1,8 @@
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestWebApi.Abstractions;
+using TestWebApi.Constants;
+using TestWebApi.CustomAttributes;
 using TestWebApi.DataTransferObjects;
 
 namespace TestWebApi.Controllers;
@@ -38,7 +39,7 @@ public class UserController : Controller
         return Ok(result);
     }
     
-    [Authorize]
+    [Authorize(UserRole.User)]
     [HttpPut("user/edit")]
     public IActionResult Edit([FromBody] UserUpdateDto userEdit)
     {

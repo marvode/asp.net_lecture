@@ -34,6 +34,10 @@ public class UserRepository: IUserRepository
     public User EditUserName(string userId, string name)
     {
         var user = _context.Users.Find(userId);
+        
+        if (user.FullName == name)
+            return user;
+        
         user.FullName = name;
         var result = _context.SaveChanges();
         

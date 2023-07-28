@@ -1,25 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/marv/RiderProjects/TestWebApi/TestWebApi/TestWebApi.csproj": {}
+    "C:\\Users\\modemwingie\\Documents\\Projects\\asp.net_lecture\\TestWebApi\\TestWebApi.csproj": {}
   },
   "projects": {
-    "/Users/marv/RiderProjects/TestWebApi/TestWebApi/TestWebApi.csproj": {
+    "C:\\Users\\modemwingie\\Documents\\Projects\\asp.net_lecture\\TestWebApi\\TestWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marv/RiderProjects/TestWebApi/TestWebApi/TestWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\modemwingie\\Documents\\Projects\\asp.net_lecture\\TestWebApi\\TestWebApi.csproj",
         "projectName": "TestWebApi",
-        "projectPath": "/Users/marv/RiderProjects/TestWebApi/TestWebApi/TestWebApi.csproj",
-        "packagesPath": "/Users/marv/.nuget/packages/",
-        "outputPath": "/Users/marv/RiderProjects/TestWebApi/TestWebApi/obj/",
+        "projectPath": "C:\\Users\\modemwingie\\Documents\\Projects\\asp.net_lecture\\TestWebApi\\TestWebApi.csproj",
+        "packagesPath": "C:\\Users\\modemwingie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\modemwingie\\Documents\\Projects\\asp.net_lecture\\TestWebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/marv/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\modemwingie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://13.90.93.249/NugetGallery/api/v1/FeedService.svc": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -80,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

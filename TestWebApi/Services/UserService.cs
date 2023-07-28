@@ -1,4 +1,6 @@
+using System.Security.Authentication;
 using TestWebApi.Abstractions;
+using TestWebApi.Constants;
 using TestWebApi.DataTransferObjects;
 using TestWebApi.Helpers;
 using TestWebApi.Model;
@@ -21,12 +23,14 @@ public class UserService: IUserService
         var userExist = _userRepository.FindByEmail(email);
         if (userExist != null)
             throw new Exception("email already exist");
-        
+
         var user = new User
         {
             Email = email,
             FullName = name,
-            Password = password
+            Password = PasswordHasher.HashPassword(password, out var salt),
+            Salt = salt,
+            Role = UserRole.User
         };
 
         var result = _userRepository.Register(user);
@@ -42,10 +46,14 @@ public class UserService: IUserService
     
     public Token Login(string email, string password)
     {
-        var user = _userRepository.Login(email, password);
+        var user = _userRepository.FindByEmail(email);
+        if (user is null)
+            throw new AuthenticationException("User is not authenticated");
 
-        if (user == null)
-            throw new Exception("something went wrong");
+        var isValid = PasswordHasher.VerifyPassword(password, user.Password, user.Salt);
+        
+        if (!isValid)
+            throw new AuthenticationException("User is not authenticated");
 
         return new Token
         {
