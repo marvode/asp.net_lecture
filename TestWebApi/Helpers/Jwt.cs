@@ -45,6 +45,8 @@ public class Jwt
 
         validationParameters.ValidAudience = null;
         validationParameters.ValidIssuer = null;
+        validationParameters.ValidateAudience = false;
+        validationParameters.ValidateIssuer = false;
         validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("Jwt")["Secret"]));
 
         var principal = new JwtSecurityTokenHandler().ValidateToken(jwtToken, validationParameters, out _);

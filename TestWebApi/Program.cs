@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using TestWebApi.Abstractions;
+using TestWebApi.Constants;
 using TestWebApi.Context;
+using TestWebApi.Middleware;
 using TestWebApi.Repositories;
 using TestWebApi.Services;
 
@@ -53,6 +55,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<JwtMiddleware>();
 
 app.MapControllers();
 
