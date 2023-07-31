@@ -57,4 +57,9 @@ public class UserService: IUserService
     {
         return _userRepository.EditUserName(userId, name);
     }
+
+    public PaginatorResponseDTO<IEnumerable<User>> GetAll(int pageSize, int pageNumber)
+    {
+        return _userRepository.GetAll(pageSize, pageNumber);
+    }
 }

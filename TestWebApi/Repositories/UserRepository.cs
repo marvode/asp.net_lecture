@@ -1,5 +1,7 @@
 using TestWebApi.Abstractions;
 using TestWebApi.Context;
+using TestWebApi.DataTransferObjects;
+using TestWebApi.Helpers;
 using TestWebApi.Model;
 
 namespace TestWebApi.Repositories;
@@ -41,5 +43,14 @@ public class UserRepository: IUserRepository
             throw new Exception("could not save to db");
         
         return user;
+    }
+    
+    public PaginatorResponseDTO<IEnumerable<User>> GetAll(int pageSize, int pageNumber)
+    {
+        var users = _context.Users;
+        
+        var userResult = users.Pagination(pageSize, pageNumber);
+
+        return userResult;
     }
 }

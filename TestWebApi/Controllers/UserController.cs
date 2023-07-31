@@ -54,4 +54,10 @@ public class UserController : Controller
 
         return Ok(result);
     }
+
+    [HttpGet("user")]
+    public IActionResult GetAll([FromQuery] PaginationRequestDto pageInfo)
+    {
+        return Ok(_userService.GetAll(pageInfo.PageSize, pageInfo.PageNumber));
+    }
 }
