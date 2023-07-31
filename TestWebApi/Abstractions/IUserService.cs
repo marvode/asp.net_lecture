@@ -8,4 +8,5 @@ public interface IUserService
     public Token Register(string name, string email, string password);
     public Token Login(string email, string password);
     public User EditUserName(string userId, string name);
+    public PaginatorResponseDTO<IEnumerable<User>> GetAll(int pageSize, int pageNumber);
 }
