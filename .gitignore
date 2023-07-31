@@ -1,0 +1,4 @@
+/TestWebApi/bin/*
+/.idea/*
+/TestWebApi/obj/*
+/TestWebApi/appsettings.*
